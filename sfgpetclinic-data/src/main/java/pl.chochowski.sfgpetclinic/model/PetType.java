@@ -9,6 +9,6 @@ package pl.chochowski.sfgpetclinic.model;
  *
  * @author mchochowski
  */
-class PetType {
+class PetType extends  BaseEntity {
 	private String name;
 }
