@@ -1,11 +1,13 @@
 package pl.chochowski.sfgpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import pl.chochowski.sfgpetclinic.model.Pet;
-import pl.chochowski.sfgpetclinic.services.CrudService;
+import pl.chochowski.sfgpetclinic.services.PetService;
 
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
@@ -16,7 +18,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
     }
     @Override
     public Pet save(Pet object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
     @Override
     public void delete(Pet object) {
